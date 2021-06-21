@@ -15,7 +15,7 @@
 		450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450E322925A5818800881CF5 /* SwiftyFBX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4513358825A85F6100773EC8 /* SwiftyFBXFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513358625A85F6100773EC8 /* SwiftyFBXFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4513358925A85F6100773EC8 /* SwiftyFBXFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFormat.mm */; };
-		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
+		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
 		4520A66025B4780A009CB46A /* FBXTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A65E25B4780A009CB46A /* FBXTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4520A66125B4780A009CB46A /* FBXTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4520A65F25B4780A009CB46A /* FBXTexture.mm */; };
@@ -33,9 +33,9 @@
 		456EC0C125C40E2500264AAB /* FBXPose.h in Headers */ = {isa = PBXBuildFile; fileRef = 456EC0BF25C40E2500264AAB /* FBXPose.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456EC0C225C40E2500264AAB /* FBXPose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456EC0C025C40E2500264AAB /* FBXPose.mm */; };
 		456EC0C425C40E7100264AAB /* FBXPose_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456EC0C325C40E7100264AAB /* FBXPose_Internal.h */; };
-		456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */; };
+		456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */; };
-		456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */; };
+		456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */; };
 		4574CF4325BBF95200388277 /* SwiftyFBX.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */; };
@@ -81,6 +81,7 @@
 		45F8734B25DC9A2300F4F20C /* FBXIOFileHeaderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F8734925DC9A2300F4F20C /* FBXIOFileHeaderInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45F8734C25DC9A2300F4F20C /* FBXIOFileHeaderInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F8734A25DC9A2300F4F20C /* FBXIOFileHeaderInfo.mm */; };
 		45F8734E25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F8734D25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h */; };
+		4C05816726815D6C00A43F1B /* FBXIOSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64C525A5840F00C77BD8 /* FBXIOSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -364,25 +365,26 @@
 				45062CBB25D56F17002E9B9E /* FBXPoint.h in Headers */,
 				4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */,
 				45C53ED825CF8E6E001C4759 /* FBXNode_Internal.h in Headers */,
+				4C05816726815D6C00A43F1B /* FBXIOSettings.h in Headers */,
 				459084A025BBEF90006DCF91 /* FBXSkeleton_Internal.h in Headers */,
 				456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */,
 				455BE82425BD40380016F2A8 /* FBXCamera.h in Headers */,
 				45F8734B25DC9A2300F4F20C /* FBXIOFileHeaderInfo.h in Headers */,
 				45F8734E25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h in Headers */,
+				456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */,
 				456EC0C125C40E2500264AAB /* FBXPose.h in Headers */,
 				452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */,
 				45273E6825C418550060B3C1 /* FBXGeometry.h in Headers */,
 				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
 				45273E6B25C41AE00060B3C1 /* FBXSurfaceMaterial_Internal.h in Headers */,
 				450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */,
+				4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */,
 				4513358825A85F6100773EC8 /* SwiftyFBXFormat.h in Headers */,
 				45DA64E725A58EF300C77BD8 /* FBXCollection.h in Headers */,
 				45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */,
 				45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */,
 				4590849A25BBEE7E006DCF91 /* FBXSkeleton.h in Headers */,
 				45A6CADA25C6A50800F8EDB5 /* FBXAnimStack.h in Headers */,
-				456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */,
-				4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */,
 				45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */,
 				45455DB025B51B7400D6D8A7 /* FBXTexture_Internal.h in Headers */,
 				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
@@ -672,7 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KCACRD7592;
+				DEVELOPMENT_TEAM = 3CNAJL629T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -710,7 +712,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KCACRD7592;
+				DEVELOPMENT_TEAM = 3CNAJL629T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -744,7 +746,7 @@
 				CODE_SIGN_ENTITLEMENTS = fbx/fbx.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KCACRD7592;
+				DEVELOPMENT_TEAM = 3CNAJL629T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/SwiftyFBX/**";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
@@ -761,7 +763,7 @@
 				CODE_SIGN_ENTITLEMENTS = fbx/fbx.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KCACRD7592;
+				DEVELOPMENT_TEAM = 3CNAJL629T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/SwiftyFBX/**";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
