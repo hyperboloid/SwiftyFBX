@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class FBXDocumentInfo;
 @class FBXManager;
 @class FBXNode;
+@class FBXMarker;
 
 @interface FBXScene : FBXDocument
 @property (nonatomic, readonly) NSArray<FBXMesh*> *meshs;
@@ -41,6 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getAnimationStackCount) NSUInteger animationStackCount;
 
 - (FBXMesh*)createMeshWithName:(NSString*)name;
+- (void)addCamera:(FBXCamera*)camera lookingAt:(FBXMarker*)marker;
+- (void)addMesh:(FBXMesh*)mesh;
+
 - (FBXNode *)getRootNode;
 - (NSUInteger)getPolygonCount;
 - (NSUInteger)getMaterialCount;

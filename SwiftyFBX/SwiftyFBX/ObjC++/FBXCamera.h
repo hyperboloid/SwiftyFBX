@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FBXStruct.h"
+#import "FBXMarker.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,6 +35,8 @@ typedef NS_ENUM(int, FBXCameraFormat)
 - (NSString *)getName;
 - (FBXCameraFormat)getFormat;
 - (Position)getPosition;
+- (void)setPosition:(Position)position;
+
 @end
 
 NS_ASSUME_NONNULL_END

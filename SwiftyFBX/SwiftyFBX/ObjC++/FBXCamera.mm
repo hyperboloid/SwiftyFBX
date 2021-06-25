@@ -11,6 +11,7 @@
 @implementation FBXCamera
 {
     FbxCamera* _cCamera;
+    FbxNode* _cNode;
 }
 
 - (instancetype)init

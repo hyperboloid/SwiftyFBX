@@ -15,11 +15,11 @@
 #import "FBXPoint.h"
 #import <fbxsdk.h>
 
-@interface FBXMesh ()
-@property (nonatomic)FbxMesh* cMesh;
-@end
-
 @implementation FBXMesh
+{
+    FbxMesh* _cMesh;
+    FbxNode* _cNode;
+}
 
 - (instancetype)init
 {
@@ -156,18 +156,18 @@
 
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index
 {
-    FbxGeometryElementNormal* cNormals = self.cMesh->GetElementNormal(index);
+    FbxGeometryElementNormal* cNormals = _cMesh->GetElementNormal(index);
     return [FBXLayerElementNormal createWithCLayerElementNormal:cNormals];
 }
 
 - (void)getElementTangentCount
 {
-    self.cMesh->GetElementTangentCount();
+    _cMesh->GetElementTangentCount();
 }
 
 - (void)GetElementTangentAtIndex:(int)index
 {
-    self.cMesh->GetElementTangent(index);
+    _cMesh->GetElementTangent(index);
 }
 
 - (int)getPolygonCount
@@ -253,66 +253,66 @@
 
 - (void)getElementPolygonGroupCount
 {
-    self.cMesh->GetElementPolygonGroupCount();
+    _cMesh->GetElementPolygonGroupCount();
 }
 
 - (void)getElementPolygonGroup
 {
-    self.cMesh->GetElementPolygonGroup();
+    _cMesh->GetElementPolygonGroup();
 }
 
 - (void)getPolygonSizeAtIndex:(int)index
 {
-    self.cMesh->GetPolygonSize(index);
+    _cMesh->GetPolygonSize(index);
 }
 
 - (void)getPolygonVertexAtIndexPath:(NSIndexPath*)indexPath
 {
-    self.cMesh->GetPolygonVertex(0, 0);
+    _cMesh->GetPolygonVertex(0, 0);
 }
 
 - (void)getElementVertexColorCount
 {
-    self.cMesh->GetElementVertexColorCount();
+    _cMesh->GetElementVertexColorCount();
 }
 
 - (void)getElementVertexColorAtIndex:(int)index
 {
-    self.cMesh->GetElementVertexColor(index);
+    _cMesh->GetElementVertexColor(index);
 }
 
 - (void)getElementUVCount
 {
-    self.cMesh->GetElementUVCount();
+    _cMesh->GetElementUVCount();
 }
 
 - (void)getElementUVAtIndex:(int)index
 {
-    self.cMesh->GetElementUV(index);
+    _cMesh->GetElementUV(index);
 }
 
 - (void)getTextureUVIndex
 {
-    self.cMesh->GetTextureUVIndex(0, 0);
+    _cMesh->GetTextureUVIndex(0, 0);
 }
 
 - (void)getElementMaterialCount
 {
-    self.cMesh->GetElementMaterialCount();
+    _cMesh->GetElementMaterialCount();
 }
 
 - (void)getElementMaterialAtIndex:(int)index
 {
-    self.cMesh->GetElementMaterial(index);
+    _cMesh->GetElementMaterial(index);
 }
 
 - (void)getElementVisibilityCount
 {
-    self.cMesh->GetElementVisibilityCount();
+    _cMesh->GetElementVisibilityCount();
 }
 
 - (void)getElementVisibilityAtIndex:(int)index
 {
-    self.cMesh->GetElementVisibility(index);
+    _cMesh->GetElementVisibility(index);
 }
 @end
