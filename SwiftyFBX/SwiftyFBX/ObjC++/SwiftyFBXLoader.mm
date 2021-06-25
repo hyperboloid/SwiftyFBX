@@ -9,7 +9,7 @@
 #import "SwiftyFBXLoadResult.h"
 #import "SwiftyFBXFormat.h"
 #import "FBXScene.h"         
-#import "FBXSecne_Internal.h"
+#import "FBXScene_Internal.h"
 #import "FBXMesh.h"
 #import "FBXMesh_Internal.h"
 #import "FBXIOFileHeaderInfo.h"

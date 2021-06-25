@@ -6,14 +6,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FBXIOSettings.h"
+#import "FBXScene.h"
+#import "FBXCamera.h"
+#import "FBXMarker.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FBXManager : NSObject
-@property(nonatomic, weak) FBXIOSettings* iossettings;
+@class FBXScene;
+@class FBXCamera;
+@class FBXMarker;
 
-- (NSString*)create;
+@interface FBXManager : NSObject
+- (FBXScene*)createSceneWithName:(NSString*)name;
+- (FBXCamera*)createCameraWithName:(NSString*)name;
+- (FBXMarker*)createMarkerWithName:(NSString*)name;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,7 +6,7 @@
 //
 
 #import "FBXScene.h"
-#import "FBXSecne_Internal.h"
+#import "FBXScene_Internal.h"
 #import "FBXMesh.h"
 #import "FBXMesh_Internal.h"
 #import "FBXTexture.h"
@@ -147,19 +147,18 @@
     return self;
 }
 
-+ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName
++ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName;
 {
-    return [[FBXScene alloc] init];
+    return [manager createSceneWithName:sceneName];
 }
 
-+ (instancetype)sceneWithCScene:(FbxScene* )cScene
-{
-    FBXScene *scene = [[FBXScene alloc] init];
-    if(cScene == NULL) {
-        return scene;
-    }
-            
-    return scene;
+- (FbxScene*)getCScene {
+    return _cScene;
+}
+
+- (FBXMesh*)createMeshWithName:(NSString*)name {
+    FBXMesh *mesh = [[FBXMesh alloc] initWithCMesh:FbxMesh::Create(_cScene, [name cStringUsingEncoding: NSASCIIStringEncoding])];
+    return mesh;
 }
 
 - (NSUInteger)getPolygonCount

@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readwrite, strong) NSMutableArray<FBXPose*> *poses;
 @property (nonatomic, readwrite, strong) NSMutableArray<FBXAnimStack*> *animationStacks;
 - (instancetype)initWithCScene:(FbxScene* )cScene;
++ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName;
+- (instancetype)init;
+- (FbxScene*)getCScene;
 @end
 
 NS_ASSUME_NONNULL_END

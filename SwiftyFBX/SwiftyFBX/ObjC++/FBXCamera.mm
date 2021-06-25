@@ -29,7 +29,6 @@
     if (cCamera != NULL) {
         _cCamera = cCamera;
     }
-    
     return self;
 }
 

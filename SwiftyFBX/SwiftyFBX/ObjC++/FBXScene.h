@@ -9,6 +9,7 @@
 #import "FBXDocument.h"
 #import "FBXManager.h"
 #import "FBXStruct.h"
+#import "FBXNode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @class FBXSurfaceMaterial;
 @class FBXAnimStack;
 @class FBXDocumentInfo;
+@class FBXManager;
+@class FBXNode;
 
 @interface FBXScene : FBXDocument
 @property (nonatomic, readonly) NSArray<FBXMesh*> *meshs;
@@ -37,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSArray *lodgroups;
 @property (nonatomic, readonly, getter=getAnimationStackCount) NSUInteger animationStackCount;
 
+- (FBXMesh*)createMeshWithName:(NSString*)name;
+- (FBXNode *)getRootNode;
 - (NSUInteger)getPolygonCount;
 - (NSUInteger)getMaterialCount;
 - (FBXSurfaceMaterial*)getMaterialAtIndex:(int)index;

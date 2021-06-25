@@ -16,6 +16,7 @@
 #import "FBXSkeleton.h"
 #import "FBXLight.h"
 #import "FBXCamera.h"
+#import "FBXMarker.h"
 #import "FBXPose.h"
 #import "FBXSurfaceMaterial.h"
 #import "FBXLayerContainer.h"
