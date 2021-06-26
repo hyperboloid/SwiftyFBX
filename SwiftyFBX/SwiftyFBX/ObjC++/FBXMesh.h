@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getRotation) Position rotation;
 @property (nonatomic, readonly, getter=getScale) Position scale;
 @property (nonatomic, getter=getControlPoints, setter=setControlPoints:) NSArray<FBXPoint*> *controlPoints;
+@property (nonatomic, setter=setPolygonNormals:) NSArray<FBXPoint*> *polygonNormals;
 
 - (NSArray<FBXPoint*>*)getPolygonVertices;
 - (NSArray<FBXPoint*>*)getPolygonVertexNormals;

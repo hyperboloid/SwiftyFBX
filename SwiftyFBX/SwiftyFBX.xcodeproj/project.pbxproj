@@ -703,7 +703,7 @@
 				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYSTEM_HEADER_SEARCH_PATHS = "";
@@ -741,7 +741,7 @@
 				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				SYSTEM_HEADER_SEARCH_PATHS = "";
 			};

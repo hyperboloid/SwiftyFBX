@@ -151,6 +151,16 @@
     _cMesh->EndPolygon();
 }
 
+- (void)setPolygonNormals:(NSArray<FBXPoint *> *)polygonNormals {
+    FbxGeometryElementNormal* normal = _cMesh->CreateElementNormal();
+    normal->SetMappingMode(FbxGeometryElement::eByPolygon);
+    normal->SetReferenceMode(FbxGeometryElement::eDirect);
+    for (int index=0; index < polygonNormals.count; index++) {
+        FBXPoint *point = polygonNormals[index];
+        normal->GetDirectArray().Add(FbxVector4(point.x, point.y, point.z));
+    }
+}
+
 - (int)getElementNormalCount
 {
     if (_cMesh == NULL) {
