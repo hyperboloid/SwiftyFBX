@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getVectorDisplacementFactorName) NSString *vectorDisplacementFactorName;
 @property (nonatomic, readonly, getter=getShadingModel) NSString *shadingModel;
 @property (nonatomic, readonly, getter=getAmbient) FBXColor *ambient;
-@property (nonatomic, readonly, getter=getDiffuse) FBXColor *diffuse;
+@property (nonatomic, getter=getDiffuse, setter=setDiffuse:) FBXColor *diffuse;
 @property (nonatomic, readonly, getter=getSpecular) FBXColor *specular;
 @property (nonatomic, readonly, getter=getSpecularFactor) CGFloat specularFactor;
 @property (nonatomic, readonly, getter=getEmissive) FBXColor *emissive;

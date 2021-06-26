@@ -33,6 +33,10 @@
     return self;
 }
 
+- (FbxSurfaceMaterial *)getMaterial {
+    return _cMaterial;
+}
+
 - (BOOL)isPhong
 {
     if (_cMaterial == NULL) {
@@ -466,6 +470,14 @@
                                    green:cDiffuse.Get()[1]
                                     blue:cDiffuse.Get()[2]
                                    alpha:0.0f];
+}
+
+- (void)setDiffuse:(FBXColor *)diffuse {
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        FbxDouble3 diffuseColor(diffuse.red, diffuse.green, diffuse.blue);
+        cPhong->Diffuse.Set(diffuseColor);
+    }
 }
 
 - (FBXColor *)getSpecular

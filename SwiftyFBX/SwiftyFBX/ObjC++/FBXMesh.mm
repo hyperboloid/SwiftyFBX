@@ -14,6 +14,7 @@
 #import "FBXStruct.h"
 #import "FBXPoint.h"
 #import <fbxsdk.h>
+#import "FBXSurfaceMaterial_Internal.h"
 
 @implementation FBXMesh
 {
@@ -158,6 +159,20 @@
     for (int index=0; index < polygonNormals.count; index++) {
         FBXPoint *point = polygonNormals[index];
         normal->GetDirectArray().Add(FbxVector4(point.x, point.y, point.z));
+    }
+}
+
+- (void)setPolygonColors:(NSArray<FBXSurfaceMaterial*> *)polygonColors {
+    FbxGeometryElementMaterial* color = _cMesh->CreateElementMaterial();
+    color->SetMappingMode(FbxGeometryElement::eByPolygon);
+    color->SetReferenceMode(FbxGeometryElement::eIndexToDirect);
+
+    color->GetIndexArray().SetCount((int)polygonColors.count);
+
+    for (int index=0; index < polygonColors.count; index++) {
+        FBXSurfaceMaterial *material = polygonColors[index];
+        _cMesh->GetNode()->AddMaterial([material getMaterial]);
+        color->GetIndexArray().SetAt(index,index);
     }
 }
 

@@ -8,8 +8,11 @@
 #import <Foundation/Foundation.h>
 #import "FBXGeometry.h"
 #import "FBXNode.h"
+#import "FBXSurfaceMaterial.h"
+
 @class FBXLayerElementNormal;
 @class FBXPoint;
+@class FBXSurfaceMaterial;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getScale) Position scale;
 @property (nonatomic, getter=getControlPoints, setter=setControlPoints:) NSArray<FBXPoint*> *controlPoints;
 @property (nonatomic, setter=setPolygonNormals:) NSArray<FBXPoint*> *polygonNormals;
+@property (nonatomic, setter=setPolygonColors:) NSArray<FBXSurfaceMaterial*> *polygonColors;
 
 - (NSArray<FBXPoint*>*)getPolygonVertices;
 - (NSArray<FBXPoint*>*)getPolygonVertexNormals;

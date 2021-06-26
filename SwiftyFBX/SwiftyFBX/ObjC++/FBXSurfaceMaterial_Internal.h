@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FBXSurfaceMaterial ()
 - (instancetype)initWithCMaterial:(FbxSurfaceMaterial* )cMaterial;
+- (FbxSurfaceMaterial*)getMaterial;
 @end
 
 NS_ASSUME_NONNULL_END

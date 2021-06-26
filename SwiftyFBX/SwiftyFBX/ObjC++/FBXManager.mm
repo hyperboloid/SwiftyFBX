@@ -12,6 +12,7 @@
 #import "FBXMarker_Internal.h"
 #import "FBXCamera_Internal.h"
 #import "FBXNode_Internal.h"
+#import "FBXSurfaceMaterial_Internal.h"
 
 
 @implementation FBXManager {
@@ -47,6 +48,12 @@
     FbxNode* node = FbxNode::Create(manager, cName);
     node->SetNodeAttribute(cMarker);
     return [[FBXMarker alloc] initWithCMarker:cMarker];
+}
+
+- (FBXSurfaceMaterial*)createPhongMaterialWithName:(NSString*)name {
+    const char *cName = [name cStringUsingEncoding: NSASCIIStringEncoding];
+    FbxSurfacePhong* cPhong = FbxSurfacePhong::Create(manager, cName);
+    return [[FBXSurfaceMaterial alloc] initWithCMaterial:cPhong];
 }
 
 - (void)exportScene:(FBXScene*)scene fbxFilename:(NSString*)filename {
