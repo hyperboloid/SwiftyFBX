@@ -23,14 +23,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getTranslation) Position translation;
 @property (nonatomic, readonly, getter=getRotation) Position rotation;
 @property (nonatomic, readonly, getter=getScale) Position scale;
-@property (nonatomic, readonly, getter=getControlPoints) NSArray<FBXPoint*> *controlPoints;
+@property (nonatomic, getter=getControlPoints, setter=setControlPoints:) NSArray<FBXPoint*> *controlPoints;
 
 - (NSArray<FBXPoint*>*)getPolygonVertices;
 - (NSArray<FBXPoint*>*)getPolygonVertexNormals;
 - (FBXLayerElementNormal *)getElementNormal;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
-- (void)setPolygonVertices:(NSArray<FBXPoint*>*)vertices;
-- (void)setElementNormals:(NSArray<FBXPoint*>*)normals;
+- (void)setControlPoints:(NSArray<FBXPoint*>*)controlPoints;
+- (void)beginPolygon;
+- (void)addPolygon:(int)index;
+- (void)endPolygon;
 @end
 
 NS_ASSUME_NONNULL_END

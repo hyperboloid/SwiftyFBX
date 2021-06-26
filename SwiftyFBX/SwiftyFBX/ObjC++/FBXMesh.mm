@@ -131,6 +131,26 @@
     return controlPoints;
 }
 
+- (void)setControlPoints:(NSArray<FBXPoint*>*)controlPoints {
+    _cMesh->InitControlPoints((int)controlPoints.count);
+    for (int index=0; index < controlPoints.count; index++) {
+        FBXPoint *point = controlPoints[index];
+        _cMesh->SetControlPointAt(FbxVector4(point.x, point.y, point.z), index);
+    }
+}
+
+- (void)beginPolygon {
+    _cMesh->BeginPolygon();
+}
+
+- (void)addPolygon:(int)index {
+    _cMesh->AddPolygon(index);
+}
+
+- (void)endPolygon {
+    _cMesh->EndPolygon();
+}
+
 - (int)getElementNormalCount
 {
     if (_cMesh == NULL) {
