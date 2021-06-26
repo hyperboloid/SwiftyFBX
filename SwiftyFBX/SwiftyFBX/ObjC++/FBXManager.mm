@@ -11,6 +11,7 @@
 #import "FBXScene_Internal.h"
 #import "FBXMarker_Internal.h"
 #import "FBXCamera_Internal.h"
+#import "FBXNode_Internal.h"
 
 
 @implementation FBXManager {
@@ -33,15 +34,27 @@
 }
 
 - (FBXCamera*)createCameraWithName:(NSString*)name {
-    FBXCamera* camera = [[FBXCamera alloc] initWithCCamera:FbxCamera::Create(manager, [name cStringUsingEncoding: NSASCIIStringEncoding])];
-    return camera;
+    const char *cName = [name cStringUsingEncoding: NSASCIIStringEncoding];
+    FbxCamera* cCamera = FbxCamera::Create(manager, cName);
+    FbxNode* node = FbxNode::Create(manager, cName);
+    node->SetNodeAttribute(cCamera);
+    return [[FBXCamera alloc] initWithCCamera:cCamera];
 }
 
 - (FBXMarker*)createMarkerWithName:(NSString*)name {
-    FBXMarker* marker = [[FBXMarker alloc] initWithCMarker:FbxMarker::Create(manager, [name cStringUsingEncoding: NSASCIIStringEncoding])];
-    return marker;
+    const char *cName = [name cStringUsingEncoding: NSASCIIStringEncoding];
+    FbxMarker* cMarker = FbxMarker::Create(manager, cName);
+    FbxNode* node = FbxNode::Create(manager, cName);
+    node->SetNodeAttribute(cMarker);
+    return [[FBXMarker alloc] initWithCMarker:cMarker];
 }
 
-
+- (void)exportScene:(FBXScene*)scene fbxFilename:(NSString*)filename {
+    FbxExporter *exporter = FbxExporter::Create(manager, "Exporter");
+    const char* cFilename = [filename cStringUsingEncoding: NSASCIIStringEncoding];
+    exporter->Initialize(cFilename, -1, ios);
+    exporter->Export([scene getCScene]);
+    exporter->Destroy();
+}
 
 @end

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FBXNode ()
 - (instancetype)initWithCNode:(FbxNode* )cNode;
+- (FbxNode*)getNode;
 @end
 
 NS_ASSUME_NONNULL_END

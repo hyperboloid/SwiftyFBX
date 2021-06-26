@@ -23,6 +23,18 @@
     return self;
 }
 
+- (FbxNode *)getNode {
+    return _cNode;
+}
+
+- (FBXNode*)getTarget:()node {
+    return [[FBXNode alloc] initWithCNode:_cNode->GetTarget()];
+}
+
+- (void)setTarget:(FBXNode*)node {
+    _cNode->SetTarget([node getNode]);
+}
+
 - (Position)getTranslation
 {
     if (_cNode == NULL) {

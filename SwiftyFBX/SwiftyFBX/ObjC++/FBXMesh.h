@@ -29,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<FBXPoint*>*)getPolygonVertexNormals;
 - (FBXLayerElementNormal *)getElementNormal;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
-- (void)setPosition:(Position)position;
 - (void)setPolygonVertices:(NSArray<FBXPoint*>*)vertices;
 - (void)setElementNormals:(NSArray<FBXPoint*>*)normals;
 @end

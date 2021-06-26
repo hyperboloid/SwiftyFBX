@@ -7,11 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "FBXStruct.h"
+#import "FBXNode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FBXMarker : NSObject
-- (void)setPosition:(Position)position;
+@property (nonatomic, readonly, getter=getNode) FBXNode *node;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -81,8 +81,6 @@
 		45F8734C25DC9A2300F4F20C /* FBXIOFileHeaderInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F8734A25DC9A2300F4F20C /* FBXIOFileHeaderInfo.mm */; };
 		45F8734E25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F8734D25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h */; };
 		4C05816726815D6C00A43F1B /* FBXIOSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64C525A5840F00C77BD8 /* FBXIOSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C05816A26817D9700A43F1B /* FBXExporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C05816826817D9700A43F1B /* FBXExporter.mm */; };
-		4C05816B26817D9700A43F1B /* FBXExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C05816926817D9700A43F1B /* FBXExporter.h */; };
 		4CE84637268557FC003A91B4 /* FBXMarker_Internal.h in Sources */ = {isa = PBXBuildFile; fileRef = 4CE84636268557FC003A91B4 /* FBXMarker_Internal.h */; };
 		4CE8463A2685581A003A91B4 /* FBXMarker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CE846382685581A003A91B4 /* FBXMarker.mm */; };
 		4CE8463B2685581A003A91B4 /* FBXMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CE846392685581A003A91B4 /* FBXMarker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -199,8 +197,6 @@
 		45F8734925DC9A2300F4F20C /* FBXIOFileHeaderInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXIOFileHeaderInfo.h; sourceTree = "<group>"; };
 		45F8734A25DC9A2300F4F20C /* FBXIOFileHeaderInfo.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXIOFileHeaderInfo.mm; sourceTree = "<group>"; };
 		45F8734D25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXIOFileHeaderInfo_Internal.h; sourceTree = "<group>"; };
-		4C05816826817D9700A43F1B /* FBXExporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXExporter.mm; sourceTree = "<group>"; };
-		4C05816926817D9700A43F1B /* FBXExporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXExporter.h; sourceTree = "<group>"; };
 		4CE84636268557FC003A91B4 /* FBXMarker_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXMarker_Internal.h; sourceTree = "<group>"; };
 		4CE846382685581A003A91B4 /* FBXMarker.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXMarker.mm; sourceTree = "<group>"; };
 		4CE846392685581A003A91B4 /* FBXMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXMarker.h; sourceTree = "<group>"; };
@@ -335,8 +331,6 @@
 				45F8734925DC9A2300F4F20C /* FBXIOFileHeaderInfo.h */,
 				45F8734D25DC9B0300F4F20C /* FBXIOFileHeaderInfo_Internal.h */,
 				45F8734A25DC9A2300F4F20C /* FBXIOFileHeaderInfo.mm */,
-				4C05816826817D9700A43F1B /* FBXExporter.mm */,
-				4C05816926817D9700A43F1B /* FBXExporter.h */,
 				4CE84636268557FC003A91B4 /* FBXMarker_Internal.h */,
 				4CE846382685581A003A91B4 /* FBXMarker.mm */,
 				4CE846392685581A003A91B4 /* FBXMarker.h */,
@@ -403,7 +397,6 @@
 				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
 				45A6CADD25C6A63100F8EDB5 /* FBXAnimStack_Internal.h in Headers */,
 				45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */,
-				4C05816B26817D9700A43F1B /* FBXExporter.h in Headers */,
 				455BE82725BD407E0016F2A8 /* FBXCamera_Internal.h in Headers */,
 				45455DA225B48EEA00D6D8A7 /* FBXScene_Internal.h in Headers */,
 				45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */,
@@ -542,7 +535,6 @@
 				459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */,
 				456EC0C225C40E2500264AAB /* FBXPose.mm in Sources */,
 				45D64DA625CD9AD20003E43C /* FBXStruct.mm in Sources */,
-				4C05816A26817D9700A43F1B /* FBXExporter.mm in Sources */,
 				4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */,
 				45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */,
 			);

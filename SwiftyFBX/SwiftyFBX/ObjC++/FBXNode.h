@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=getTranslation, setter=setTranslation:) Position translation;
 @property (nonatomic, getter=getRotation, setter=setRotation:) Position rotation;
 @property (nonatomic, getter=getScale, setter=setScale:) Position scale;
+@property (nonatomic, getter=getTarget, setter=setTarget:) FBXNode *target;
 @end
 
 NS_ASSUME_NONNULL_END

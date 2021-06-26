@@ -7,11 +7,11 @@
 
 #import "FBXCamera.h"
 #import <fbxsdk.h>
+#import "FBXNode_Internal.h"
 
 @implementation FBXCamera
 {
     FbxCamera* _cCamera;
-    FbxNode* _cNode;
 }
 
 - (instancetype)init
@@ -24,7 +24,7 @@
     return self;
 }
 
-- (instancetype)initWithCCamera:(FbxCamera* )cCamera
+- (instancetype)initWithCCamera:(FbxCamera* )cCamera;
 {
     self = [self init];
     if (cCamera != NULL) {
@@ -57,6 +57,20 @@
     FBXCameraFormat format = FBXCameraFormat(cFormat);
     
     return format;
+}
+
+- (FBXNode*)getNode
+{
+    if (_cCamera == NULL) {
+        return [[FBXNode alloc] init];
+    }
+    
+    FbxNode* node = _cCamera->GetNode();
+    if (node == NULL) {
+        return [[FBXNode alloc] init];
+    }
+
+    return [[FBXNode alloc] initWithCNode:node];
 }
 
 - (Position)getPosition

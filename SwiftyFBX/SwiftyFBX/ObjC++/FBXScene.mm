@@ -24,6 +24,7 @@
 #import "FBXAnimStack.h"
 #import "FBXAnimStack_Internal.h"
 #import "FBXDocumentInfo.h"
+#import "FBXNode_Internal.h"
 #import <fbxsdk.h>
 
 @implementation FBXScene
@@ -62,16 +63,16 @@
     _cScene = cScene;
     
     int totalCount = 0;
-    totalCount = cScene->GetMemberCount<FbxMesh>();
+    totalCount = _cScene->GetMemberCount<FbxMesh>();
     for (int i = 0; i < totalCount; i++) {
-        FbxMesh* cMesh = cScene->GetMember<FbxMesh>(i);
+        FbxMesh* cMesh = _cScene->GetMember<FbxMesh>(i);
         if (cMesh != NULL) {
             FBXMesh *mesh = [[FBXMesh alloc] initWithCMesh:cMesh];
             [_meshs addObject:mesh];
         }
     }
     
-    totalCount = cScene->GetMemberCount<FbxTexture>();
+    totalCount = _cScene->GetMemberCount<FbxTexture>();
     for (int i = 0; i < totalCount; i++) {
         FbxTexture* cTexture = cScene->GetMember<FbxTexture>(i);
         if (cTexture != NULL) {
@@ -80,7 +81,7 @@
         }
     }
     
-    totalCount = cScene->GetMemberCount<FbxSkeleton>();
+    totalCount = _cScene->GetMemberCount<FbxSkeleton>();
     for (int i = 0; i < totalCount; i++) {
         FbxSkeleton* cSkeleton = cScene->GetMember<FbxSkeleton>(i);
         if (cSkeleton != NULL) {
@@ -89,7 +90,7 @@
         }
     }
     
-    totalCount = cScene->GetMemberCount<FbxLight>();
+    totalCount = _cScene->GetMemberCount<FbxLight>();
     for (int i = 0; i < totalCount; i++) {
         FbxLight* cLight = _cScene->GetMember<FbxLight>(i);
         if (cLight != NULL) {
@@ -98,7 +99,7 @@
         }
     }
 
-    totalCount = cScene->GetMemberCount<FbxCamera>();
+    totalCount = _cScene->GetMemberCount<FbxCamera>();
     for (int i = 0; i < totalCount; i++) {
         FbxCamera* cCamera = _cScene->GetMember<FbxCamera>(i);
         if (cCamera != NULL) {
@@ -157,8 +158,15 @@
 }
 
 - (FBXMesh*)createMeshWithName:(NSString*)name {
-    FBXMesh *mesh = [[FBXMesh alloc] initWithCMesh:FbxMesh::Create(_cScene, [name cStringUsingEncoding: NSASCIIStringEncoding])];
-    return mesh;
+    const char *cName = [name cStringUsingEncoding: NSASCIIStringEncoding];
+    FbxMesh* cMesh = FbxMesh::Create(_cScene, cName);
+    FbxNode* node = FbxNode::Create(_cScene, cName);
+    node->SetNodeAttribute(cMesh);
+    return [[FBXMesh alloc] initWithCMesh:cMesh];
+}
+
+- (void)addNode:(FBXNode*)node {
+    _cScene->GetRootNode()->AddChild([node getNode]);
 }
 
 - (NSUInteger)getPolygonCount

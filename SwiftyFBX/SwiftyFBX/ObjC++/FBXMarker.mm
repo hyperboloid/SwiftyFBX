@@ -8,6 +8,7 @@
 #import "FBXMarker.h"
 #import "FBXMarker_Internal.h"
 #import <fbxsdk.h>
+#import "FBXNode_Internal.h"
 
 @implementation FBXMarker
 {
@@ -24,6 +25,20 @@
     _cMarker = cMarker;
     
     return self;
+}
+
+- (FBXNode*)getNode
+{
+    if (_cMarker == NULL) {
+        return [[FBXNode alloc] init];
+    }
+    
+    FbxNode* node = _cMarker->GetNode();
+    if (node == NULL) {
+        return [[FBXNode alloc] init];
+    }
+
+    return [[FBXNode alloc] initWithCNode:node];
 }
 
 @end

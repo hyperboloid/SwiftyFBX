@@ -18,7 +18,6 @@
 @implementation FBXMesh
 {
     FbxMesh* _cMesh;
-    FbxNode* _cNode;
 }
 
 - (instancetype)init

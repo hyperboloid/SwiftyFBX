@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (FBXScene*)createSceneWithName:(NSString*)name;
 - (FBXCamera*)createCameraWithName:(NSString*)name;
 - (FBXMarker*)createMarkerWithName:(NSString*)name;
+- (void)exportScene:(FBXScene*)scene fbxFilename:(NSString*)filename;
+//- (void)exportScene:(FBXScene*)scene daeFilename:(NSString*)filename;
 @end
 
 NS_ASSUME_NONNULL_END

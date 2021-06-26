@@ -42,10 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getAnimationStackCount) NSUInteger animationStackCount;
 
 - (FBXMesh*)createMeshWithName:(NSString*)name;
-- (void)addCamera:(FBXCamera*)camera lookingAt:(FBXMarker*)marker;
-- (void)addMesh:(FBXMesh*)mesh;
+- (void)addNode:(FBXNode*)node;
 
-- (FBXNode *)getRootNode;
 - (NSUInteger)getPolygonCount;
 - (NSUInteger)getMaterialCount;
 - (FBXSurfaceMaterial*)getMaterialAtIndex:(int)index;
