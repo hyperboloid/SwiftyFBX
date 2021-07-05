@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getRotation) Position rotation;
 @property (nonatomic, readonly, getter=getScale) Position scale;
 @property (nonatomic, getter=getControlPoints, setter=setControlPoints:) NSArray<FBXPoint*> *controlPoints;
+@property (nonatomic, setter=setElementUVPoints:) NSArray<FBXPoint*> *uvPoints;
 @property (nonatomic, setter=setPolygonNormals:) NSArray<FBXPoint*> *polygonNormals;
 @property (nonatomic, setter=setPolygonColors:) NSArray<FBXSurfaceMaterial*> *polygonColors;
 
@@ -34,7 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<FBXPoint*>*)getPolygonVertexNormals;
 - (FBXLayerElementNormal *)getElementNormal;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
-- (void)setControlPoints:(NSArray<FBXPoint*>*)controlPoints;
 - (void)beginPolygon;
 - (void)addPolygon:(int)index;
 - (void)endPolygon;

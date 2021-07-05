@@ -257,6 +257,17 @@
     return vertices;
 }
 
+- (void)setElementUVPoints:(NSArray<FBXPoint *> *)uvPoints {
+    FbxGeometryElementUV* uvElement = _cMesh->CreateElementUV("UV");
+    uvElement->SetMappingMode(FbxGeometryElement::eByPolygonVertex);
+    uvElement->SetReferenceMode(FbxGeometryElement::eDirect);
+
+    for (int index = 0; index < uvPoints.count; index++) {
+        FBXPoint *point = uvPoints[index];
+        uvElement->GetDirectArray().Add(FbxVector2(point.x, point.y));
+    }
+}
+
 - (int)getPolygonVertexCount
 {
     if (_cMesh == NULL) {

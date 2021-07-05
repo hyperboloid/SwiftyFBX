@@ -57,6 +57,8 @@
 }
 
 - (void)exportScene:(FBXScene*)scene fbxFilename:(NSString*)filename {
+    ios->SetBoolProp(EXP_FBX_EMBEDDED, true);
+
     FbxExporter *exporter = FbxExporter::Create(manager, "Exporter");
     const char* cFilename = [filename cStringUsingEncoding: NSASCIIStringEncoding];
     exporter->Initialize(cFilename, -1, ios);

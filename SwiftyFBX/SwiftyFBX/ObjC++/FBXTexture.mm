@@ -10,6 +10,9 @@
 #import <fbxsdk.h>
 
 @implementation FBXTexture
+{
+    FbxTexture* _cTexture;
+}
 
 - (instancetype)init
 {
@@ -27,6 +30,8 @@
         return self;
     }
     
+    _cTexture = cTexture;
+    
     FbxFileTexture* cFileTexture = FbxCast<FbxFileTexture>(cTexture);
     NSString *filePath = [NSString stringWithCString:cFileTexture->GetFileName() encoding:NSUTF8StringEncoding];
     if (filePath != nil) {
@@ -34,6 +39,10 @@
     }
     
     return self;
+}
+
+- (FbxTexture *)getTexture {
+    return _cTexture;
 }
 
 @end

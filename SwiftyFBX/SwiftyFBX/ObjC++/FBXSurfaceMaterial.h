@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 @class FBXColor;
+@class FBXTexture;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getShadingModel) NSString *shadingModel;
 @property (nonatomic, readonly, getter=getAmbient) FBXColor *ambient;
 @property (nonatomic, getter=getDiffuse, setter=setDiffuse:) FBXColor *diffuse;
+@property (nonatomic, setter=setDiffuseTexture:) FBXTexture *diffuseTexture;
 @property (nonatomic, readonly, getter=getSpecular) FBXColor *specular;
 @property (nonatomic, readonly, getter=getSpecularFactor) CGFloat specularFactor;
 @property (nonatomic, readonly, getter=getEmissive) FBXColor *emissive;

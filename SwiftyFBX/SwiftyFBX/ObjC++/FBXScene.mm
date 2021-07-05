@@ -25,6 +25,7 @@
 #import "FBXAnimStack_Internal.h"
 #import "FBXDocumentInfo.h"
 #import "FBXNode_Internal.h"
+#import "FBXTexture_Internal.h"
 #import <fbxsdk.h>
 
 @implementation FBXScene
@@ -163,6 +164,18 @@
     FbxNode* node = FbxNode::Create(_cScene, cName);
     node->SetNodeAttribute(cMesh);
     return [[FBXMesh alloc] initWithCMesh:cMesh];
+}
+
+- (FBXTexture *)createFileTextureWithFilename:(NSString *)filename {
+    const char* cFilename = [filename cStringUsingEncoding: NSASCIIStringEncoding];
+
+    FbxFileTexture *fileTexture = FbxFileTexture::Create(_cScene, "Texture");
+    fileTexture->SetFileName(cFilename);
+    fileTexture->SetTextureUse(FbxTexture::eStandard);
+    fileTexture->SetMappingType(FbxTexture::eUV);
+    fileTexture->SetMaterialUse(FbxFileTexture::eModelMaterial);
+    
+    return [[FBXTexture alloc] initWithCTexture:fileTexture];
 }
 
 - (void)addNode:(FBXNode*)node {

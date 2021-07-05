@@ -7,6 +7,8 @@
 
 #import "FBXSurfaceMaterial.h"
 #import "FBXSurfaceMaterial_Internal.h"
+#import "FBXTexture.h"
+#import "FBXTexture_Internal.h"
 #import "FBXColor.h"
 #import <fbxsdk.h>
 
@@ -35,6 +37,7 @@
 
 - (FbxSurfaceMaterial *)getMaterial {
     return _cMaterial;
+    
 }
 
 - (BOOL)isPhong
@@ -477,6 +480,13 @@
         FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
         FbxDouble3 diffuseColor(diffuse.red, diffuse.green, diffuse.blue);
         cPhong->Diffuse.Set(diffuseColor);
+    }
+}
+
+- (void)setDiffuseTexture:(FBXTexture *)diffuseTexture {
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        cPhong->Diffuse.ConnectSrcObject([diffuseTexture getTexture]);
     }
 }
 

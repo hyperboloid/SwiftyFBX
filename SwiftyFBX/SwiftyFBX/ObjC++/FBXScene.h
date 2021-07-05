@@ -10,6 +10,7 @@
 #import "FBXManager.h"
 #import "FBXStruct.h"
 #import "FBXNode.h"
+#import "FBXTexture.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getAnimationStackCount) NSUInteger animationStackCount;
 
 - (FBXMesh*)createMeshWithName:(NSString*)name;
+- (FBXTexture*)createFileTextureWithFilename:(NSString*)filename;
 - (void)addNode:(FBXNode*)node;
 
 - (NSUInteger)getPolygonCount;
