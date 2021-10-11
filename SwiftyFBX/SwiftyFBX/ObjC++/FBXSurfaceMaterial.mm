@@ -460,6 +460,14 @@
                                    alpha:0.0f];
 }
 
+- (void)setAmbient:(FBXColor *)ambient {
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        FbxDouble3 ambientColor(ambient.red, ambient.green, ambient.blue);
+        cPhong->Ambient.Set(ambientColor);
+    }
+}
+
 - (FBXColor *)getDiffuse
 {
     if (_cMaterial == NULL) {
@@ -509,6 +517,14 @@
 
 }
 
+- (void)setSpecular:(FBXColor *)specular {
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        FbxDouble3 specularColor(specular.red, specular.green, specular.blue);
+        cPhong->Specular.Set(specularColor);
+    }
+}
+
 - (CGFloat)getSpecularFactor
 {
     if (_cMaterial == NULL) {
@@ -522,6 +538,14 @@
     FbxPropertyT<FbxDouble> cSpecularFactor = cPhong->SpecularFactor;
     
     return cSpecularFactor.Get();
+}
+
+- (void)setSpecularFactor:(CGFloat)specularFactor
+{
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        cPhong->SpecularFactor.Set(specularFactor);
+    }
 }
 
 - (FBXColor *)getEmissive
@@ -539,6 +563,14 @@
                                    alpha:0.0f];
 }
 
+- (void)setEmissive:(FBXColor *)emissive {
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        FbxDouble3 emissiveColor(emissive.red, emissive.green, emissive.blue);
+        cPhong->Emissive.Set(emissiveColor);
+    }
+}
+
 - (FBXColor *)getTransparencyColor
 {
     if (_cMaterial == NULL) {
@@ -554,6 +586,15 @@
                                    alpha:0.0f];
 }
 
+- (void)setTransparencyColor:(FBXColor *)transparency
+{
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        FbxDouble3 transparentColor(transparency.red, transparency.green, transparency.blue);
+        cPhong->TransparentColor.Set(transparentColor);
+    }
+}
+
 - (CGFloat)getTransparencyFactor
 {
     if (_cMaterial == NULL) {
@@ -564,6 +605,14 @@
     FbxPropertyT<FbxDouble> cTransparencyFactor = cPhong->TransparencyFactor;
     
     return cTransparencyFactor.Get();
+}
+
+- (void)setTransparencyFactor:(CGFloat)transparencyFactor
+{
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        cPhong->TransparencyFactor.Set(transparencyFactor);
+    }
 }
 
 - (CGFloat)getShininess
@@ -579,6 +628,14 @@
     FbxPropertyT<FbxDouble> cShininess = cPhong->Shininess;
     
     return cShininess.Get();
+}
+
+- (void)setShininess:(CGFloat)shininess
+{
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        cPhong->Shininess.Set(shininess);
+    }
 }
 
 - (FBXColor *)getReflectionColor
@@ -599,6 +656,22 @@
                                    alpha:0.0f];
 }
 
+- (void)setReflectionColor:(FBXColor *)reflection
+{
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        FbxDouble3 reflectionColor(reflection.red, reflection.green, reflection.blue);
+        cPhong->Reflection.Set(reflectionColor);
+    }
+}
+
+- (void)setReflectionTexture:(FBXTexture *)reflectionTexture {
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        cPhong->Reflection.ConnectSrcObject([reflectionTexture getTexture]);
+    }
+}
+
 - (CGFloat)getReflectionFactor
 {
     if (_cMaterial == NULL) {
@@ -612,6 +685,14 @@
     FbxPropertyT<FbxDouble> cReflectionFactor = cPhong->ReflectionFactor;
     
     return cReflectionFactor.Get();
+}
+
+- (void)setReflectionFactor:(CGFloat)reflectionFactor
+{
+    if (self.isPhong) {
+        FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+        cPhong->ReflectionFactor.Set(reflectionFactor);
+    }
 }
 
 @end

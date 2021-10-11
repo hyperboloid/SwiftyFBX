@@ -40,17 +40,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getVectorDisplacementColorName) NSString *vectorDisplacementColorName;
 @property (nonatomic, readonly, getter=getVectorDisplacementFactorName) NSString *vectorDisplacementFactorName;
 @property (nonatomic, readonly, getter=getShadingModel) NSString *shadingModel;
-@property (nonatomic, readonly, getter=getAmbient) FBXColor *ambient;
+@property (nonatomic, getter=getAmbient, setter=setAmbient:) FBXColor *ambient;
 @property (nonatomic, getter=getDiffuse, setter=setDiffuse:) FBXColor *diffuse;
 @property (nonatomic, setter=setDiffuseTexture:) FBXTexture *diffuseTexture;
-@property (nonatomic, readonly, getter=getSpecular) FBXColor *specular;
-@property (nonatomic, readonly, getter=getSpecularFactor) CGFloat specularFactor;
-@property (nonatomic, readonly, getter=getEmissive) FBXColor *emissive;
-@property (nonatomic, readonly, getter=getTransparencyColor) FBXColor *transparencyColor;
-@property (nonatomic, readonly, getter=getTransparencyFactor) CGFloat transparencyFactor;
-@property (nonatomic, readonly, getter=getShininess) CGFloat shininess;
-@property (nonatomic, readonly, getter=getReflectionColor) FBXColor *reflectionColor;
-@property (nonatomic, readonly, getter=getReflectionFactor) CGFloat reflectionFactor;
+@property (nonatomic, getter=getSpecular, setter=setSpecular:) FBXColor *specular;
+@property (nonatomic, getter=getSpecularFactor, setter=setSpecularFactor:) CGFloat specularFactor;
+@property (nonatomic, getter=getEmissive, setter=setEmissive:) FBXColor *emissive;
+@property (nonatomic, getter=getTransparencyColor, setter=setTransparencyColor:) FBXColor *transparency;
+@property (nonatomic, getter=getTransparencyFactor, setter=setTransparencyFactor:) CGFloat transparencyFactor;
+@property (nonatomic, getter=getShininess, setter=setShininess:) CGFloat shininess;
+@property (nonatomic, getter=getReflectionColor, setter=setReflectionColor:) FBXColor *reflection;
+@property (nonatomic, setter=setReflectionTexture:) FBXTexture *reflectionTexture;
+@property (nonatomic, getter=getReflectionFactor, setter=setReflectionFactor:) CGFloat reflectionFactor;
 
 - (BOOL)isPhong;
 - (BOOL)isLambert;
